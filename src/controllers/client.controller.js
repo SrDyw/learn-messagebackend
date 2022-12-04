@@ -1,12 +1,16 @@
 import { pool } from "../database.js";
 
-export const indexRoute = async(req, res) => {
+export const loadMessages = async(req, res) => {
     const [messages] = await pool.query('SELECT * FROM messages');
     res.render('root', {
         data: messages
     });
 
 }   
+
+export const indexRoute = (req, res) => {
+    res.send("WELCOME");
+}
 
 export const sendMessage = async(req, res) => {
     const user = 'pepe';
