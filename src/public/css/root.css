@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(46, 37, 61);
+    min-height: 100vh;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 1fr 0.1fr;
+    flex-direction: column;
+    width: 98%;
+    max-width: 500px;
+    height: 90vh;
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    position: relative;
+}
+
+input {
+    height: 70%;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: rgb(209, 184, 233);
+    /* margin-right: 20px; */
+}
+
+button {
+    all: unset;
+    height: 60%;
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    position: relative;
+
+    transition: .2s;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20px;
+    background-color: white;
+    border-radius: 0 100px 100px 0;
+}
+
+button p {
+    position: relative;
+    transform: translateX(10px);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+.message__display {
+    background-color: rebeccapurple;
+    border-radius: 20px;
+
+    overflow-y: scroll;
+}
+
+.message__display::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.204);
+    border-radius: 20px;
+}
+
+.message__display::-webkit-scrollbar-thumb {
+    background-color: rgb(139, 58, 253);
+    border-radius: 20px;
+}
+
+.message {
+    padding: 20px;
+    background-color: rgb(255, 183, 255);
+    border-radius: 20px;
+    margin: 10px;
+    max-width: 160px;
+
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow: hidden; */
+
+    position: relative;
+}
+
+.message p {
+    width: 100%;
+    overflow: hidden;
+}
+
+.delete__btn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: rgb(140, 77, 156);
+    transition: .2s;
+}
+
+.delete__btn:hover {
+    transform: translateY(-50%) scale(1.4);
+    background-color: rgb(201, 78, 232);
+
+}
