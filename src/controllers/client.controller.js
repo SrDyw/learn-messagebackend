@@ -1,10 +1,14 @@
 import { pool } from "../database.js";
 
 export const loadMessages = async(req, res) => {
-    const [messages] = await pool.query('SELECT * FROM messages');
-    res.render('root', {
-        data: messages
-    });
+    try {
+        const [messages] = await pool.query('SELECT * FROM messages');
+        res.render('root', {
+            data: messages
+        });
+    } catch {
+        res.send("Something where wrong!");
+    }
 
 }   
 
